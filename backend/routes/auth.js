@@ -62,7 +62,7 @@ router.post('/login', [
   // If there are errors, return Bad request and the errors
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+    return res.status(400).json({errors: errors.array() });
   }
 
   const { email, password } = req.body;
@@ -86,7 +86,7 @@ router.post('/login', [
     }
     const authtoken = jwt.sign(data, JWT_SECRET);
     success = true;
-    res.json({ success, authtoken })
+    res.json({ success:success, authtoken:authtoken })
 
   } catch (error) {
     console.error(error.message);
