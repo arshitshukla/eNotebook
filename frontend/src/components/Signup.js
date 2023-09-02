@@ -12,7 +12,7 @@ const Signup = (props) => {
     const handlesubmit=async (e)=>{
         e.preventDefault();
         const {name,email,password}=credentials;
-        const response=await fetch("http://localhost:5000/api/auth/createUser",{
+        const response = await fetch("http://localhost:5000/api/auth/createUser",{
             
             method:"POST",
             headers:{
